@@ -1,0 +1,51 @@
+/* Print / Save as PDF — paired with js/report-core.js */
+
+@page {
+  size: letter;
+  margin: 12mm;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .no-print,
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+
+  main.tool-page {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .calc-report-host {
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .calc-report-sheet {
+    break-inside: avoid;
+  }
+
+  .calc-report-sheet__section-title {
+    break-after: avoid;
+  }
+
+  .calc-report-sheet__table,
+  .calc-report-sheet__equations {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
