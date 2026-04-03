@@ -20,6 +20,9 @@
           <div class="nav-item">
             <button type="button">Tools</button>
             <ul class="dropdown">
+              <li><a href="tools/simple-beam.html">Simple supported beam</a></li>
+              <li><a href="tools/fillet-weld.html">Fillet weld capacity</a></li>
+              <li><a href="tools/steel-beam-f.html">Steel beam capacity (AISC 360-22)</a></li>
               <li><a href="tools/aisc-shapes.html">AISC shape database</a></li>
             </ul>
           </div>
@@ -32,33 +35,48 @@
           <div class="nav-item">
             <button type="button">About us</button>
             <ul class="dropdown">
-              <li><a href="about/index.html">Mission &amp; data</a></li>
+              <li><a href="about/index.html">About Structoo</a></li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
     <main>
-      <section class="hero">
-        <h1>Calculation tools for structural engineers</h1>
+      <section class="landing-hero">
+        <h1>Structoo</h1>
+        <p class="tagline">Simple, trustworthy tools for structural work</p>
         <p>
-          Structoo hosts small, interactive tools that take your inputs, run
-          the math, and present results in a form you can use in calculation
-          packages.
+          Run quick checks and standard calculations in the browser—clear
+          inputs, step-by-step logic where it matters, and results you can copy
+          into your notes or calculation packages.
         </p>
       </section>
-      <section class="card" aria-labelledby="tools-heading">
-        <h2 id="tools-heading">Tools</h2>
-        <ul class="tool-links">
-          <li>
-            <a href="tools/aisc-shapes.html">AISC steel shape database filter</a>
-            — filter AISC v16.0 shapes by type, depth, weight, and more.
-          </li>
-        </ul>
-      </section>
+      <h2 id="tools-heading" style="margin:0 0 1rem;font-size:1.25rem;">Tools</h2>
+      <div class="tool-grid" aria-labelledby="tools-heading">
+        <article class="tool-card">
+          <h3>Simple supported beam</h3>
+          <p>Uniform load: reactions, shear, moment, and deflection (with E and I).</p>
+          <a href="tools/simple-beam.html">Open calculator</a>
+        </article>
+        <article class="tool-card">
+          <h3>Fillet weld capacity</h3>
+          <p>LRFD-style strength per foot and total, using leg size and sides.</p>
+          <a href="tools/fillet-weld.html">Open calculator</a>
+        </article>
+        <article class="tool-card">
+          <h3>Steel beam flexure (AISC 360-22)</h3>
+          <p>Chapter F: yielding and lateral-torsional buckling for doubly symmetric I-shapes.</p>
+          <a href="tools/steel-beam-f.html">Open calculator</a>
+        </article>
+        <article class="tool-card">
+          <h3>AISC shape database</h3>
+          <p>Filter AISC v16.0 shapes by type, depth, weight, and designation.</p>
+          <a href="tools/aisc-shapes.html">Open database</a>
+        </article>
+      </div>
     </main>
     <footer class="site-footer">
-      <p>Structoo — educational / professional helper tools.</p>
+      <p>Structoo — free calculation helpers for structural engineers.</p>
     </footer>
   </body>
 </html>

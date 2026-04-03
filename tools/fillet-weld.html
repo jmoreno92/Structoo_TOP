@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fillet weld capacity — Structoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="../index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="simple-beam.html">Simple supported beam</a></li>
+              <li><a href="fillet-weld.html">Fillet weld capacity</a></li>
+              <li><a href="steel-beam-f.html">Steel beam capacity (AISC 360-22)</a></li>
+              <li><a href="aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="../resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="../about/index.html">About Structoo</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <h1>Fillet weld capacity (LRFD-style)</h1>
+      <p class="lede">
+        Nominal strength of a longitudinal fillet weld per AISC 360-22 J2.4:
+        <em>R<sub>n</sub> = F<sub>nw</sub> A<sub>we</sub></em> with
+        <em>F<sub>nw</sub> = 0.60 F<sub>EXX</sub></em> and effective throat
+        <em>0.707 ×</em> leg size. Design strength uses your resistance factor
+        φ (default 0.75). If weld length is omitted, only line-load capacity is
+        shown.
+      </p>
+      <section class="card">
+        <form id="weld-form" class="calc-form cols-2" novalidate>
+          <div class="calc-field">
+            <label for="phi">Resistance factor φ</label>
+            <input type="number" id="phi" min="0" max="1" step="any" value="0.75" required />
+          </div>
+          <div class="calc-field">
+            <label for="fexx">Electrode strength F<sub>EXX</sub> (ksi)</label>
+            <input type="number" id="fexx" min="0" step="any" value="70" required />
+          </div>
+          <div class="calc-field">
+            <label for="leg">Leg size w (in.)</label>
+            <input type="number" id="leg" min="0" step="any" required />
+          </div>
+          <div class="calc-field">
+            <label for="sides">Number of welds (sides)</label>
+            <input type="number" id="sides" min="1" step="1" value="2" required />
+          </div>
+          <div class="calc-field">
+            <label for="wlen">Total weld length (ft)</label>
+            <input type="number" id="wlen" min="0" step="any" />
+            <span class="hint">Per side, along the joint. Leave blank for φR<sub>n</sub> per foot only.</span>
+          </div>
+          <div class="calc-field" style="grid-column:1/-1">
+            <div class="btn-row">
+              <button type="submit" class="btn-primary">Calculate</button>
+            </div>
+          </div>
+        </form>
+        <div id="weld-out" class="results-block" hidden>
+          <h3>Results</h3>
+          <dl id="weld-dl"></dl>
+          <div id="weld-eq" class="eq-block"></div>
+        </div>
+        <p id="weld-err" class="status-bar error" hidden></p>
+      </section>
+      <p class="tool-disclaimer">
+        For sizing only—verify electrode, load combination, effective length,
+        and connection geometry against AISC 360 and your project standard.
+        φ = 0.75 is typical for welds in LRFD; use the factor required by your
+        jurisdiction.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <p><a href="../index.html">Home</a></p>
+    </footer>
+    <script src="../js/fillet-weld.js" type="module"></script>
+  </body>
+</html>

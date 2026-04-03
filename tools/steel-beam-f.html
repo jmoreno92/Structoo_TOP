@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Steel beam flexure — Structoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="../index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="simple-beam.html">Simple supported beam</a></li>
+              <li><a href="fillet-weld.html">Fillet weld capacity</a></li>
+              <li><a href="steel-beam-f.html">Steel beam capacity (AISC 360-22)</a></li>
+              <li><a href="aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="../resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="../about/index.html">About Structoo</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <h1>Steel beam flexural strength (AISC 360-22 Chapter F)</h1>
+      <p class="lede">
+        Doubly symmetric rolled I-shape, strong-axis bending, compact section
+        assumed for local buckling. Computes nominal moment for
+        <strong>yielding</strong> (<em>M<sub>p</sub></em>) and
+        <strong>lateral-torsional buckling</strong> per Section F1 (AISC
+        360-22), then the governing nominal strength and LRFD design strength
+        with φ<sub>b</sub> = 0.90.
+      </p>
+      <section class="card">
+        <form id="f-form" class="calc-form" novalidate>
+          <fieldset style="border:1px solid var(--border);border-radius:8px;padding:1rem;margin:0">
+            <legend style="font-weight:600">Material</legend>
+            <div class="calc-form cols-2">
+              <div class="calc-field">
+                <label for="Fy">Yield stress F<sub>y</sub> (ksi)</label>
+                <input type="number" id="Fy" min="0" step="any" value="50" required />
+              </div>
+              <div class="calc-field">
+                <label for="Ebeam">Modulus E (ksi)</label>
+                <input type="number" id="Ebeam" min="0" step="any" value="29000" required />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset style="border:1px solid var(--border);border-radius:8px;padding:1rem;margin:0">
+            <legend style="font-weight:600">Section properties</legend>
+            <div class="calc-form cols-2">
+              <div class="calc-field">
+                <label for="Zx">Plastic modulus Z<sub>x</sub> (in³)</label>
+                <input type="number" id="Zx" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="Sx">Elastic modulus S<sub>x</sub> (in³)</label>
+                <input type="number" id="Sx" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="ry">r<sub>y</sub> (in.)</label>
+                <input type="number" id="ry" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="rts">r<sub>ts</sub> (in.)</label>
+                <input type="number" id="rts" min="0" step="any" required />
+                <span class="hint">From AISC shape tables (not equal to r<sub>y</sub>).</span>
+              </div>
+              <div class="calc-field">
+                <label for="ho">h<sub>o</sub> (in.)</label>
+                <input type="number" id="ho" min="0" step="any" required />
+                <span class="hint">Distance between flange centroids.</span>
+              </div>
+              <div class="calc-field">
+                <label for="J">J (in⁴)</label>
+                <input type="number" id="J" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="Iy">I<sub>y</sub> (in⁴)</label>
+                <input type="number" id="Iy" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="Cw">C<sub>w</sub> (in⁶)</label>
+                <input type="number" id="Cw" min="0" step="any" required />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset style="border:1px solid var(--border);border-radius:8px;padding:1rem;margin:0">
+            <legend style="font-weight:600">Unbraced length</legend>
+            <div class="calc-form cols-2">
+              <div class="calc-field">
+                <label for="Lb">Unbraced length L<sub>b</sub> (in.)</label>
+                <input type="number" id="Lb" min="0" step="any" required />
+              </div>
+              <div class="calc-field">
+                <label for="Cb">C<sub>b</sub></label>
+                <input type="number" id="Cb" min="0" step="any" value="1" required />
+              </div>
+            </div>
+          </fieldset>
+          <div class="btn-row">
+            <button type="submit" class="btn-primary">Calculate</button>
+          </div>
+        </form>
+        <div id="f-out" class="results-block" hidden>
+          <h3>Summary</h3>
+          <dl id="f-dl-sum"></dl>
+          <h3 style="margin-top:1rem">Yielding (Section F2.1)</h3>
+          <dl id="f-dl-y"></dl>
+          <div id="f-eq-y" class="eq-block"></div>
+          <h3 style="margin-top:1rem">Lateral-torsional buckling (Section F1)</h3>
+          <dl id="f-dl-ltb"></dl>
+          <div id="f-eq-ltb" class="eq-block"></div>
+        </div>
+        <p id="f-err" class="status-bar error" hidden></p>
+      </section>
+      <p class="tool-disclaimer">
+        Assumes compact flanges and web, doubly symmetric I-shape, loads in the
+        plane of the web, and C<sub>b</sub> per your load pattern. Compare to
+        AISC 360-22 Chapter F and the <em>Manual</em> for your section and
+        loading. Structoo is not affiliated with AISC.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <p><a href="../index.html">Home</a></p>
+    </footer>
+    <script src="../js/steel-beam-f.js" type="module"></script>
+  </body>
+</html>

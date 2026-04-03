@@ -20,6 +20,9 @@
           <div class="nav-item">
             <button type="button">Tools</button>
             <ul class="dropdown">
+              <li><a href="../tools/simple-beam.html">Simple supported beam</a></li>
+              <li><a href="../tools/fillet-weld.html">Fillet weld capacity</a></li>
+              <li><a href="../tools/steel-beam-f.html">Steel beam capacity (AISC 360-22)</a></li>
               <li><a href="../tools/aisc-shapes.html">AISC shape database</a></li>
             </ul>
           </div>
@@ -32,41 +35,56 @@
           <div class="nav-item">
             <button type="button">About us</button>
             <ul class="dropdown">
-              <li><a href="index.html">Mission &amp; data</a></li>
+              <li><a href="../about/index.html">About Structoo</a></li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
-    <main class="prose">
+    <main class="prose wide">
       <h1>About Structoo</h1>
       <p>
-        Structoo is a personal project to provide simple, transparent
-        calculation helpers for structural and civil engineers. The goal is
-        modest: clear inputs, documented logic where applicable, and outputs
-        you can trace or paste into submittals and calculation packages.
+        Civil engineering is demanding work. Many of the tools we rely on are
+        proprietary, and our salaries do not always stretch to expensive
+        licenses—especially when we only need something straightforward.
+        Structoo exists to fill that gap: <strong>free calculators</strong> you
+        can trust, bookmark, and use for quick checks without hunting for a
+        license key.
+      </p>
+      <p>
+        Everything you see here could be reproduced from design manuals or by
+        typing equation numbers into a hand calculator. Structoo’s purpose is to
+        make that workflow <em>faster</em> so you can spend your time on
+        judgment, coordination, and creativity—not repetitive arithmetic.
+      </p>
+      <p>
+        The site is aimed at professional engineers and architects in the
+        United States and will grow to support other regions over time. Students
+        in these fields are welcome too—we hope Structoo helps you learn by
+        seeing how familiar formulas behave with real numbers.
+      </p>
+      <p>
+        The word <em>engineer</em> is not about engines or mindless routine.
+        Structoo can handle the routine. <em>Engineer</em> traces to Latin
+        <em>ingenium</em>—ingenuity, cleverness, and creativity. We want to help
+        you practice engineering in that sense.
+      </p>
+      <h2>Disclaimer</h2>
+      <p>
+        Structoo is provided as-is. It is not a substitute for engineering
+        judgment, peer review, or compliance with governing codes and
+        contracts. Always verify results against the applicable standard and
+        your project requirements.
       </p>
       <h2>Steel shape data (AISC)</h2>
       <p>
-        The <strong>AISC shape database filter</strong> uses tabular properties
-        derived from the <strong>AISC Shapes Database v16.0</strong> (Excel
-        workbook). AISC publishes this database as a reference to the
-        <em>Steel Construction Manual</em>. <strong>Structoo is not affiliated
-        with, endorsed by, or sponsored by AISC.</strong> Always verify
-        section properties against the current Manual, official AISC
-        publications, or your project specifications before relying on them
-        for design.
-      </p>
-      <p>
-        If you use the AISC workbook yourself, comply with AISC’s license and
-        terms for that file. Regenerate the JSON bundled with this site only
-        from a copy you are permitted to use.
-      </p>
-      <h2>Contact</h2>
-      <p>
-        This site is provided as-is for educational and professional
-        convenience. It is not a substitute for engineering judgment or code
-        compliance review.
+        The <strong>AISC shape database filter</strong> uses properties from
+        the <strong>AISC Shapes Database v16.0</strong> workbook, a companion to
+        the <em>Steel Construction Manual</em>.
+        <strong>Structoo is not affiliated with, endorsed by, or sponsored by
+        AISC.</strong> Confirm values against the current Manual or your
+        specifications before using them for design. If you regenerate bundled
+        data from the workbook, comply with AISC’s license for that file.
       </p>
     </main>
     <footer class="site-footer">

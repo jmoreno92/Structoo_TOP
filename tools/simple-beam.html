@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple supported beam — Structoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="../index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="simple-beam.html">Simple supported beam</a></li>
+              <li><a href="fillet-weld.html">Fillet weld capacity</a></li>
+              <li><a href="steel-beam-f.html">Steel beam capacity (AISC 360-22)</a></li>
+              <li><a href="aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="../resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="../about/index.html">About Structoo</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <h1>Simple supported beam (uniform load)</h1>
+      <p class="lede">
+        Simply supported span with a uniformly distributed load. Enter span
+        length and load intensity; optional modulus <span class="unit">E</span>
+        and moment of inertia <span class="unit">I</span> are used only for
+        midspan deflection.
+      </p>
+      <section class="card">
+        <form id="beam-form" class="calc-form cols-2" novalidate>
+          <div class="calc-field">
+            <label for="L">Span length L (ft)</label>
+            <input type="number" id="L" min="0" step="any" required />
+          </div>
+          <div class="calc-field">
+            <label for="w">Distributed load w (kip/ft)</label>
+            <input type="number" id="w" min="0" step="any" required />
+          </div>
+          <div class="calc-field">
+            <label for="E">Modulus E (ksi)</label>
+            <input type="number" id="E" min="0" step="any" value="29000" />
+            <span class="hint">Typical steel: 29,000 ksi. Leave blank to skip numeric deflection.</span>
+          </div>
+          <div class="calc-field">
+            <label for="I">Moment of inertia I (in⁴)</label>
+            <input type="number" id="I" min="0" step="any" />
+            <span class="hint">Strong-axis I about bending axis.</span>
+          </div>
+          <div class="calc-field" style="grid-column:1/-1">
+            <div class="btn-row">
+              <button type="submit" class="btn-primary">Calculate</button>
+            </div>
+          </div>
+        </form>
+        <div id="beam-out" class="results-block" hidden>
+          <h3>Results</h3>
+          <dl id="beam-dl"></dl>
+          <div id="beam-eq" class="eq-block"></div>
+        </div>
+        <p id="beam-err" class="status-bar error" hidden></p>
+      </section>
+      <p class="tool-disclaimer">
+        Assumes a prismatic member, uniform load along the full span, and
+        small deflections. Units: length in feet, load in kip per foot; moment
+        in kip-ft; shear and reactions in kips.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <p><a href="../index.html">Home</a></p>
+    </footer>
+    <script src="../js/simple-beam.js" type="module"></script>
+  </body>
+</html>
