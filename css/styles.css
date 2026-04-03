@@ -1,0 +1,375 @@
+/* Structoo — light theme, blue accent */
+
+:root {
+  --bg: #fafbfc;
+  --surface: #ffffff;
+  --text: #1a2332;
+  --text-muted: #5c6b7f;
+  --brand: #1e5a96;
+  --brand-hover: #164a7a;
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px rgba(26, 35, 50, 0.06);
+  --radius: 8px;
+  --font: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-hover);
+  text-decoration: underline;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.nav-brand a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-brand a:hover {
+  color: var(--brand);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > button {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-item > button::after {
+  content: "";
+  border: 4px solid transparent;
+  border-top-color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.nav-item:hover > button,
+.nav-item:focus-within > button {
+  background: var(--bg);
+  color: var(--brand);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(26, 35, 50, 0.1);
+}
+
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.dropdown a:hover {
+  background: var(--bg);
+  color: var(--brand);
+  text-decoration: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.tool-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-links li {
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-links li:last-child {
+  border-bottom: none;
+}
+
+.tool-links a {
+  display: block;
+  padding: 0.65rem 0;
+  font-weight: 500;
+}
+
+/* AISC shapes tool */
+.tool-page h1 {
+  font-size: 1.65rem;
+  margin: 0 0 0.5rem;
+}
+
+.tool-page .lede {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  max-width: 42rem;
+}
+
+.filters {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .filters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  font: inherit;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.filter-row-nums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.status-bar {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.status-bar.error {
+  color: #b42318;
+}
+
+.table-wrap {
+  overflow: auto;
+  max-height: min(70vh, 640px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table th {
+  position: sticky;
+  top: 0;
+  background: #f1f5f9;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+}
+
+.data-table th:hover {
+  background: #e2e8f0;
+}
+
+.data-table th.sort-asc::after {
+  content: " \2191";
+  opacity: 0.7;
+}
+
+.data-table th.sort-desc::after {
+  content: " \2193";
+  opacity: 0.7;
+}
+
+.data-table tbody tr:hover {
+  background: var(--bg);
+}
+
+.data-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.prose {
+  max-width: 40rem;
+}
+
+.prose h1 {
+  font-size: 1.65rem;
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+.site-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}

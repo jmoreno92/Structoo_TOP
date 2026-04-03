@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Structoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="../index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="../tools/aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="../resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="index.html">Mission &amp; data</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="prose">
+      <h1>About Structoo</h1>
+      <p>
+        Structoo is a personal project to provide simple, transparent
+        calculation helpers for structural and civil engineers. The goal is
+        modest: clear inputs, documented logic where applicable, and outputs
+        you can trace or paste into submittals and calculation packages.
+      </p>
+      <h2>Steel shape data (AISC)</h2>
+      <p>
+        The <strong>AISC shape database filter</strong> uses tabular properties
+        derived from the <strong>AISC Shapes Database v16.0</strong> (Excel
+        workbook). AISC publishes this database as a reference to the
+        <em>Steel Construction Manual</em>. <strong>Structoo is not affiliated
+        with, endorsed by, or sponsored by AISC.</strong> Always verify
+        section properties against the current Manual, official AISC
+        publications, or your project specifications before relying on them
+        for design.
+      </p>
+      <p>
+        If you use the AISC workbook yourself, comply with AISC’s license and
+        terms for that file. Regenerate the JSON bundled with this site only
+        from a copy you are permitted to use.
+      </p>
+      <h2>Contact</h2>
+      <p>
+        This site is provided as-is for educational and professional
+        convenience. It is not a substitute for engineering judgment or code
+        compliance review.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <p><a href="../index.html">Home</a></p>
+    </footer>
+  </body>
+</html>

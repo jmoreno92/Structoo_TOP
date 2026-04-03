@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Structoo — Structural engineering calculators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="tools/aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="about/index.html">Mission &amp; data</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Calculation tools for structural engineers</h1>
+        <p>
+          Structoo hosts small, interactive tools that take your inputs, run
+          the math, and present results in a form you can use in calculation
+          packages.
+        </p>
+      </section>
+      <section class="card" aria-labelledby="tools-heading">
+        <h2 id="tools-heading">Tools</h2>
+        <ul class="tool-links">
+          <li>
+            <a href="tools/aisc-shapes.html">AISC steel shape database filter</a>
+            — filter AISC v16.0 shapes by type, depth, weight, and more.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>Structoo — educational / professional helper tools.</p>
+    </footer>
+  </body>
+</html>

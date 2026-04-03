@@ -1,0 +1,11 @@
+{
+  "name": "structoo-top",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node scripts/export-aisc-shapes.mjs"
+  },
+  "devDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

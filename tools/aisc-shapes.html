@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AISC shape database — Structoo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="nav-brand"><a href="../index.html">Structoo</a></div>
+        <nav class="site-nav" aria-label="Main">
+          <div class="nav-item">
+            <button type="button">Tools</button>
+            <ul class="dropdown">
+              <li><a href="aisc-shapes.html">AISC shape database</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">Resources</button>
+            <ul class="dropdown">
+              <li><a href="../resources/index.html">Engineering resources</a></li>
+            </ul>
+          </div>
+          <div class="nav-item">
+            <button type="button">About us</button>
+            <ul class="dropdown">
+              <li><a href="../about/index.html">Mission &amp; data</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="tool-page">
+      <h1>AISC steel shape database</h1>
+      <p class="lede">
+        Filter shapes from the AISC v16.0 database by type, geometry, weight,
+        and designation. Values are in customary US units as published by AISC.
+        See <a href="../about/index.html">About</a> for attribution and
+        disclaimer.
+      </p>
+
+      <section class="card" aria-label="Filters">
+        <div class="filters">
+          <div class="filter-field">
+            <label for="filter-type">Type</label>
+            <select id="filter-type">
+              <option value="">All types</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="filter-search">Designation search</label>
+            <input
+              type="search"
+              id="filter-search"
+              placeholder="e.g. W24, HSS8x8"
+              autocomplete="off"
+            />
+          </div>
+          <div class="filter-field">
+            <label>Depth <span class="unit">d</span> (in.)</label>
+            <div class="filter-row-nums">
+              <input
+                type="number"
+                id="filter-d-min"
+                placeholder="Min"
+                step="any"
+              />
+              <input
+                type="number"
+                id="filter-d-max"
+                placeholder="Max"
+                step="any"
+              />
+            </div>
+          </div>
+          <div class="filter-field">
+            <label>Flange width <span class="unit">bf</span> (in.)</label>
+            <div class="filter-row-nums">
+              <input
+                type="number"
+                id="filter-bf-min"
+                placeholder="Min"
+                step="any"
+              />
+              <input
+                type="number"
+                id="filter-bf-max"
+                placeholder="Max"
+                step="any"
+              />
+            </div>
+          </div>
+          <div class="filter-field">
+            <label>Weight <span class="unit">W</span> (lb/ft)</label>
+            <div class="filter-row-nums">
+              <input
+                type="number"
+                id="filter-w-min"
+                placeholder="Min"
+                step="any"
+              />
+              <input
+                type="number"
+                id="filter-w-max"
+                placeholder="Max"
+                step="any"
+              />
+            </div>
+          </div>
+        </div>
+        <p id="status" class="status-bar" aria-live="polite">Loading data…</p>
+        <div class="table-wrap" hidden id="table-container">
+          <table class="data-table" id="results-table">
+            <thead>
+              <tr>
+                <th data-key="Type" scope="col">Type</th>
+                <th data-key="AISC_Manual_Label" scope="col">AISC label</th>
+                <th data-key="W" scope="col" class="num">W</th>
+                <th data-key="d" scope="col" class="num">d</th>
+                <th data-key="bf" scope="col" class="num">bf</th>
+                <th data-key="Ix" scope="col" class="num">Ix</th>
+                <th data-key="Sx" scope="col" class="num">Sx</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        <div class="loading" id="loading-state">Loading shape data…</div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p><a href="../index.html">Home</a> · Data: AISC Shapes Database v16.0</p>
+    </footer>
+    <script src="../js/aisc-shapes.js" type="module"></script>
+  </body>
+</html>
