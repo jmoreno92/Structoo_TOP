@@ -11,9 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/print.css" media="print" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header no-print">
       <div class="site-header__inner">
         <div class="nav-brand"><a href="../index.html">Structoo</a></div>
         <nav class="site-nav" aria-label="Main">
@@ -43,14 +44,36 @@
     </header>
 
     <main class="tool-page">
-      <h1>Simple supported beam (uniform load)</h1>
-      <p class="lede">
-        Simply supported span with a uniformly distributed load. Enter span
-        length and load intensity; optional modulus <span class="unit">E</span>
-        and moment of inertia <span class="unit">I</span> are used only for
-        midspan deflection.
-      </p>
-      <section class="card">
+      <div class="no-print">
+        <h1>Simple supported beam (uniform load)</h1>
+        <p class="lede">
+          Simply supported span with a uniformly distributed load. Enter span
+          length and load intensity; optional modulus <span class="unit">E</span>
+          and moment of inertia <span class="unit">I</span> are used only for
+          midspan deflection. Use <strong>Print / Save as PDF</strong> to add a
+          summary to calculation packages (choose “Save as PDF” in the print
+          dialog).
+        </p>
+      </div>
+      <section class="card no-print">
+        <h2 class="calc-report-package-heading">Package cover (optional)</h2>
+        <p class="hint" style="margin:0 0 1rem;font-size:0.85rem">
+          Shown on the printable report only.
+        </p>
+        <div class="calc-form cols-2">
+          <div class="calc-field">
+            <label for="pkg-project">Project</label>
+            <input type="text" id="pkg-project" autocomplete="organization" />
+          </div>
+          <div class="calc-field">
+            <label for="pkg-subject">Subject / member</label>
+            <input type="text" id="pkg-subject" autocomplete="off" />
+          </div>
+          <div class="calc-field">
+            <label for="pkg-by">Prepared by</label>
+            <input type="text" id="pkg-by" autocomplete="name" />
+          </div>
+        </div>
         <form id="beam-form" class="calc-form cols-2" novalidate>
           <div class="calc-field">
             <label for="L">Span length L (ft)</label>
@@ -80,16 +103,22 @@
           <h3>Results</h3>
           <dl id="beam-dl"></dl>
           <div id="beam-eq" class="eq-block"></div>
+          <div id="beam-print-bar" class="btn-row" hidden>
+            <button type="button" class="btn-primary" id="btn-print-report">
+              Print / Save as PDF
+            </button>
+          </div>
         </div>
         <p id="beam-err" class="status-bar error" hidden></p>
       </section>
-      <p class="tool-disclaimer">
+      <p class="tool-disclaimer no-print">
         Assumes a prismatic member, uniform load along the full span, and
         small deflections. Units: length in feet, load in kip per foot; moment
         in kip-ft; shear and reactions in kips.
       </p>
+      <div id="calc-report-host" class="calc-report-host" hidden></div>
     </main>
-    <footer class="site-footer">
+    <footer class="site-footer no-print">
       <p><a href="../index.html">Home</a></p>
     </footer>
     <script src="../js/simple-beam.js" type="module"></script>

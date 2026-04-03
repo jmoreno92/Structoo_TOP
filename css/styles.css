@@ -580,3 +580,109 @@ main {
 .prose.wide {
   max-width: 46rem;
 }
+
+/* Calculation package report (screen preview; print rules in print.css) */
+.calc-report-host {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.calc-report-host[hidden] {
+  display: none !important;
+}
+
+.calc-report-sheet__header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--brand);
+}
+
+.calc-report-sheet__brand {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand);
+}
+
+.calc-report-sheet__title {
+  margin: 0.35rem 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.calc-report-sheet__meta-line {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.calc-report-sheet__section-title {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.calc-report-sheet__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.calc-report-sheet__table th,
+.calc-report-sheet__table td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.calc-report-sheet__table thead th {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+.calc-report-sheet__table--meta th {
+  width: 8.5rem;
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.calc-report-sheet__equations {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.calc-report-sheet__disclaimer {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.calc-report-sheet__disclaimer p {
+  margin: 0 0 0.5rem;
+}
+
+.calc-report-sheet__disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.calc-report-package-heading {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+}

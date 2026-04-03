@@ -27,3 +27,11 @@ npx serve .
 ```
 
 Open `/tools/…` from the served root (needed for `fetch` of JSON on the shapes page).
+
+## PDF / calculation packages
+
+**Hosting choice:** outputs use **static-friendly Option A** — the browser **Print** dialog and **Save as PDF**. No server or serverless runtime is required.
+
+Shared helpers live in [`js/report-core.js`](js/report-core.js) (report payload schema + DOM renderer). Print layout uses [`css/print.css`](css/print.css) (`media="print"`). The **simple supported beam** tool is the first consumer; other calculators can reuse the same module.
+
+Optional **Option B** (`@react-pdf/renderer`) or **Option C** (Puppeteer / serverless HTML→PDF) can be added later if you need one-click downloads without the system print dialog.
